@@ -1,0 +1,634 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.625rem;
+        --background: 0.145 0 0;
+        --foreground: 0.985 0 0;
+        --card: 0.205 0 0;
+        --card-foreground: 0.985 0 0;
+        --popover: 0.269 0 0;
+        --popover-foreground: 0.985 0 0;
+        --primary: 0.696 0.17 162.48;
+        --primary-foreground: 0.145 0 0;
+        --secondary: 0.269 0 0;
+        --secondary-foreground: 0.985 0 0;
+        --muted: 0.269 0 0;
+        --muted-foreground: 0.708 0 0;
+        --accent: 0.696 0.17 162.48;
+        --accent-foreground: 0.145 0 0;
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.985 0 0;
+        --border: 1 0 0 / 10%;
+        --input: 1 0 0 / 15%;
+        --ring: 0.696 0.17 162.48;
+        --chart-1: 0.488 0.243 264.376;
+        --chart-2: 0.696 0.17 162.48;
+        --chart-3: 0.769 0.188 70.08;
+        --chart-4: 0.627 0.265 303.9;
+        --chart-5: 0.645 0.246 16.439;
+        --sidebar: 0.205 0 0;
+        --sidebar-foreground: 0.985 0 0;
+        --sidebar-primary: 0.696 0.17 162.48;
+        --sidebar-primary-foreground: 0.145 0 0;
+        --sidebar-accent: 0.269 0 0;
+        --sidebar-accent-foreground: 0.985 0 0;
+        --sidebar-border: 1 0 0 / 10%;
+        --sidebar-ring: 0.696 0.17 162.48;
+        
+        /* Custom pitch colors */
+        --pitch-light: 0.55 0.15 142;
+        --pitch-dark: 0.45 0.18 142;
+        
+        /* Viewport height variables */
+        --vh: 1vh;
+        --viewport-height: 100vh;
+        
+        /* Side panel width for landscape mode */
+        --side-panel-width: 0px;
+        
+        /* Navigation bar height - set to 0 for landscape Game view */
+        --nav-bar-height: 72px;
+        
+        /* Fixed sidebar width for landscape non-Game views */
+        --fixed-sidebar-width: 256px;
+    }
+
+    .dark {
+        --background: 0.145 0 0;
+        --foreground: 0.985 0 0;
+        --card: 0.205 0 0;
+        --card-foreground: 0.985 0 0;
+        --popover: 0.269 0 0;
+        --popover-foreground: 0.985 0 0;
+        --primary: 0.696 0.17 162.48;
+        --primary-foreground: 0.145 0 0;
+        --secondary: 0.269 0 0;
+        --secondary-foreground: 0.985 0 0;
+        --muted: 0.269 0 0;
+        --muted-foreground: 0.708 0 0;
+        --accent: 0.696 0.17 162.48;
+        --accent-foreground: 0.145 0 0;
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.985 0 0;
+        --border: 1 0 0 / 10%;
+        --input: 1 0 0 / 15%;
+        --ring: 0.696 0.17 162.48;
+        --chart-1: 0.488 0.243 264.376;
+        --chart-2: 0.696 0.17 162.48;
+        --chart-3: 0.769 0.188 70.08;
+        --chart-4: 0.627 0.265 303.9;
+        --chart-5: 0.645 0.246 16.439;
+        --sidebar: 0.205 0 0;
+        --sidebar-foreground: 0.985 0 0;
+        --sidebar-primary: 0.696 0.17 162.48;
+        --sidebar-primary-foreground: 0.145 0 0;
+        --sidebar-accent: 0.269 0 0;
+        --sidebar-accent-foreground: 0.985 0 0;
+        --sidebar-border: 1 0 0 / 10%;
+        --sidebar-ring: 0.696 0.17 162.48;
+        
+        /* Custom pitch colors for dark theme */
+        --pitch-light: 0.55 0.15 142;
+        --pitch-dark: 0.45 0.18 142;
+    }
+
+    /* Light theme colors */
+    .light {
+        --background: 0.985 0 0;
+        --foreground: 0.145 0 0;
+        --card: 0.985 0 0;
+        --card-foreground: 0.145 0 0;
+        --popover: 0.985 0 0;
+        --popover-foreground: 0.145 0 0;
+        --primary: 0.696 0.17 162.48;
+        --primary-foreground: 0.985 0 0;
+        --secondary: 0.945 0 0;
+        --secondary-foreground: 0.145 0 0;
+        --muted: 0.945 0 0;
+        --muted-foreground: 0.455 0 0;
+        --accent: 0.945 0 0;
+        --accent-foreground: 0.145 0 0;
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.985 0 0;
+        --border: 0.855 0 0;
+        --input: 0.855 0 0;
+        --ring: 0.696 0.17 162.48;
+        --chart-1: 0.488 0.243 264.376;
+        --chart-2: 0.696 0.17 162.48;
+        --chart-3: 0.769 0.188 70.08;
+        --chart-4: 0.627 0.265 303.9;
+        --chart-5: 0.645 0.246 16.439;
+        --sidebar: 0.985 0 0;
+        --sidebar-foreground: 0.145 0 0;
+        --sidebar-primary: 0.696 0.17 162.48;
+        --sidebar-primary-foreground: 0.985 0 0;
+        --sidebar-accent: 0.945 0 0;
+        --sidebar-accent-foreground: 0.145 0 0;
+        --sidebar-border: 0.855 0 0;
+        --sidebar-ring: 0.696 0.17 162.48;
+        
+        /* Custom pitch colors for light theme */
+        --pitch-light: 0.55 0.15 142;
+        --pitch-dark: 0.45 0.18 142;
+    }
+
+    /* Base layout for full height */
+    html, body, #root {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer utilities {
+    .pitch-light {
+        background-color: oklch(var(--pitch-light));
+    }
+    
+    .pitch-dark {
+        background-color: oklch(var(--pitch-dark));
+    }
+
+    /* Mobile viewport height with fallback */
+    .h-screen-mobile {
+        height: 100vh;
+        height: 100dvh;
+        height: calc(var(--vh, 1vh) * 100);
+    }
+
+    /* Safe area utilities */
+    .safe-top {
+        padding-top: env(safe-area-inset-top, 0);
+    }
+
+    .safe-bottom {
+        padding-bottom: env(safe-area-inset-bottom, 0);
+    }
+
+    /* App shell - main container */
+    .app-shell {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    /* App main - content area below header */
+    .app-main {
+        flex: 1;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    /* Min height 0 utility for flex children */
+    .min-h-0 {
+        min-height: 0;
+    }
+
+    /* Pitch layout container - responsive grid with proper spacing for nav bar */
+    .pitch-layout {
+        display: grid;
+        width: 100%;
+        height: calc(100vh - var(--nav-bar-height));
+        height: calc(100dvh - var(--nav-bar-height));
+        gap: 0;
+        overflow: hidden;
+    }
+
+    /* Portrait mode: stack vertically with controls below pitch */
+    @media screen and (orientation: portrait) {
+        .pitch-layout {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto auto;
+            grid-template-areas:
+                "pitch"
+                "controls"
+                "bench";
+        }
+        
+        .pitch-area {
+            grid-area: pitch;
+            position: relative;
+            overflow: hidden;
+            min-height: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .pitch-controls-section {
+            grid-area: controls;
+            background: hsl(var(--card));
+        }
+        
+        .bench-section {
+            grid-area: bench;
+            overflow-y: auto;
+            background: hsl(var(--card));
+            border-top: 1px solid hsl(var(--border));
+        }
+        
+        .side-rail,
+        .side-rail-swipeable {
+            display: none;
+        }
+        
+        .timer-bar {
+            display: none;
+        }
+    }
+
+    /* Landscape mode: full-screen pitch with side panel and fixed timer bar, no top nav in Game view */
+    @media screen and (orientation: landscape) {
+        /* In landscape Game view, use full viewport height with no nav bar offset */
+        .pitch-layout {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto;
+            grid-template-areas:
+                "pitch"
+                "timer";
+            position: relative;
+            /* Full height - no nav bar in landscape Game view */
+            height: 100vh;
+            height: 100dvh;
+        }
+        
+        .pitch-area {
+            grid-area: pitch;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+            display: flex;
+            align-items: stretch;
+            justify-content: stretch;
+            transition: width 150ms ease-out;
+        }
+        
+        /* When side panel is open, reduce pitch area width with smooth transition */
+        .pitch-area.panel-open {
+            width: calc(100% - var(--side-panel-width));
+        }
+        
+        .side-rail-swipeable {
+            position: fixed;
+            /* Start from top of viewport in landscape Game view (no nav bar) */
+            top: 0;
+            right: 0;
+            height: 100vh;
+            height: 100dvh;
+            width: clamp(280px, 32vw, 400px);
+            background: #000;
+            border-left: 1px solid hsl(var(--border));
+            z-index: 40;
+            display: flex;
+            flex-direction: column;
+            will-change: transform;
+            touch-action: pan-y;
+            transition: transform 150ms ease-out;
+            pointer-events: auto;
+            color: #fff;
+        }
+        
+        /* When panel is closed (translated off-screen), disable pointer events so it doesn't block clicks */
+        .side-rail-swipeable[style*="translateX(100%"],
+        .side-rail-swipeable[style*="translateX(calc(100%"] {
+            pointer-events: none;
+        }
+        
+        /* Re-enable pointer events for interactive elements inside the panel */
+        .side-rail-swipeable[style*="translateX(100%"] .side-panel-toggle,
+        .side-rail-swipeable[style*="translateX(calc(100%"] .side-panel-toggle {
+            pointer-events: auto;
+        }
+        
+        .side-panel-toggle {
+            position: absolute;
+            left: -36px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 72px;
+            background: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-right: none;
+            border-radius: 6px 0 0 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: hsl(var(--foreground));
+            transition: background-color 0.2s;
+            z-index: 1;
+        }
+        
+        .side-panel-toggle:hover {
+            background: hsl(var(--accent));
+        }
+        
+        .side-rail-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 1rem 0.75rem;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            color: #fff;
+            /* Ensure content can scroll to the very top */
+            scroll-padding-top: 0;
+        }
+        
+        .side-rail-content > * {
+            width: 100%;
+            padding: 0 0.25rem;
+            box-sizing: border-box;
+            flex-shrink: 0;
+        }
+        
+        /* Ensure scrollbar is visible and functional */
+        .side-rail-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .side-rail-content::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .side-rail-content::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+        
+        .side-rail-content::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .timer-bar {
+            grid-area: timer;
+            background: hsl(var(--card));
+            border-top: 1px solid hsl(var(--border));
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative;
+            z-index: 30;
+            width: 100%;
+            min-height: 60px;
+            transition: width 150ms ease-out, padding-right 150ms ease-out;
+        }
+        
+        /* When side panel is open, adjust timer bar to not overlap with panel */
+        .timer-bar.panel-open {
+            width: calc(100% - var(--side-panel-width));
+            padding-right: 1rem;
+        }
+        
+        /* Ensure timer content stays on the left side with proper spacing */
+        .timer-bar > * {
+            max-width: min(600px, 100%);
+            margin-right: auto;
+        }
+        
+        .pitch-controls-section {
+            display: none;
+        }
+        
+        .bench-section {
+            display: none;
+        }
+    }
+
+    /* Pitch contain - ensures pitch scales to fill all available space with no margins */
+    .pitch-contain {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* In landscape mode, pitch container fills entire area with no gaps */
+    @media screen and (orientation: landscape) {
+        .pitch-contain {
+            align-items: stretch;
+            justify-content: stretch;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .pitch-contain > div {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    /* In portrait mode, maintain centered layout */
+    @media screen and (orientation: portrait) {
+        .pitch-contain > div {
+            max-width: 100%;
+            max-height: 100%;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    /* Prevent stray scrollbars */
+    .pitch-area,
+    .pitch-contain {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .pitch-area::-webkit-scrollbar,
+    .pitch-contain::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Subtle pulsing animation for swipe indicators */
+    @keyframes subtle-pulse {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.7;
+            transform: scale(1.05);
+        }
+    }
+
+    .animate-subtle-pulse {
+        animation: subtle-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    /* Immersive Chat Thread Fullscreen Layout */
+    .chat-thread-fullscreen {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        width: 100dvw;
+        max-width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        max-height: 100dvh;
+        min-height: 100vh;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        background: hsl(var(--background));
+        z-index: 100;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        /* Ensure the first pixel under status bar is always background */
+        padding-top: env(safe-area-inset-top, 0px);
+    }
+
+    /* Floating back button overlay - positioned lower to avoid truncation */
+    .chat-back-button {
+        position: fixed;
+        top: max(20px, calc(env(safe-area-inset-top, 0px) + 16px));
+        left: 12px;
+        z-index: 110;
+        background: hsl(var(--card) / 0.95);
+        backdrop-filter: blur(8px);
+        border: 1px solid hsl(var(--border));
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .chat-back-button:hover {
+        background: hsl(var(--accent));
+    }
+
+    /* Chat header - with increased top padding to prevent truncation */
+    .chat-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.25rem 1rem 1rem 1rem;
+        padding-top: max(1.25rem, calc(env(safe-area-inset-top, 0px) + 1.25rem));
+        border-bottom: 1px solid hsl(var(--border));
+        background: hsl(var(--card) / 0.5);
+        backdrop-filter: blur(8px);
+        flex-shrink: 0;
+        z-index: 105;
+        min-height: 72px;
+    }
+
+    /* Messages container - grows to fill space */
+    .chat-messages-container {
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        overscroll-behavior: contain;
+        background: hsl(var(--background));
+    }
+
+    /* Input container - sticky at bottom */
+    .chat-input-container {
+        position: sticky;
+        bottom: 0;
+        width: 100%;
+        padding: 1rem;
+        padding-bottom: max(1rem, calc(env(safe-area-inset-bottom, 0px) + 1rem));
+        border-top: 1px solid hsl(var(--border));
+        background: hsl(var(--card) / 0.5);
+        backdrop-filter: blur(8px);
+        flex-shrink: 0;
+        z-index: 105;
+    }
+
+    /* Hide navigation when immersive chat is active */
+    body.immersive-chat nav,
+    body.immersive-chat .top-nav,
+    body.immersive-chat header:not(.chat-header),
+    body.immersive-chat .app-header {
+        display: none !important;
+    }
+
+    /* Ensure chat is truly fullscreen in both orientations */
+    @media screen and (orientation: portrait) {
+        .chat-thread-fullscreen {
+            height: 100vh;
+            height: 100dvh;
+            max-height: 100dvh;
+        }
+        
+        /* Additional top padding in portrait for better spacing */
+        .chat-header {
+            padding-top: max(1.5rem, calc(env(safe-area-inset-top, 0px) + 1.5rem));
+            min-height: 80px;
+        }
+        
+        .chat-back-button {
+            top: max(24px, calc(env(safe-area-inset-top, 0px) + 20px));
+        }
+    }
+
+    @media screen and (orientation: landscape) {
+        .chat-thread-fullscreen {
+            height: 100vh;
+            height: 100dvh;
+            max-height: 100dvh;
+        }
+        
+        /* Landscape mode needs less vertical padding but still respects safe areas */
+        .chat-header {
+            padding-top: max(1rem, calc(env(safe-area-inset-top, 0px) + 1rem));
+            min-height: 64px;
+        }
+        
+        .chat-back-button {
+            top: max(16px, calc(env(safe-area-inset-top, 0px) + 12px));
+        }
+    }
+}
+
+/* Ensure no gaps in portrait mode */
+@media screen and (orientation: portrait) {
+    .pitch-layout {
+        gap: 0;
+    }
+    
+    /* Ensure header has no bottom margin */
+    .pitch-layout > header {
+        margin-bottom: 0;
+    }
+}
+
+/* Additional responsive utilities for smaller landscape screens */
+@media screen and (orientation: landscape) and (max-width: 1024px) {
+    .side-rail-swipeable {
+        width: clamp(260px, 28vw, 340px);
+    }
+}
+
+@media screen and (orientation: landscape) and (max-width: 768px) {
+    .side-rail-swipeable {
+        width: 260px;
+    }
+}
